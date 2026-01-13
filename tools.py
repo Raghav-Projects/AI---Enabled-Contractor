@@ -13,7 +13,7 @@ st.set_page_config(page_title="AI Contractor", page_icon="🏗️", layout="wide
 MODEL_ID = "gemini-2.5-flash-lite" 
 
 # Replace with your key or set as environment variable
-API_KEY = "API_KEY_FROM_ENV" 
+API_KEY = os.environ.get("API_KEY")
 
 try:
     client = genai.Client(api_key=API_KEY)
@@ -135,3 +135,4 @@ if user_text or voice_record or uploaded_file:
 st.markdown("---")
 
 st.caption("Powered by Gemini 2.5 Flash-Lite & Grounded by Google Search.")
+
